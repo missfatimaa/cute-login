@@ -16,7 +16,7 @@ body {
     /* position: relative; */
     display: flex;
     flex-direction: column;
-    padding: 30px 50px;
+    padding: 10px 50px 30px 50px;
     width: 400px;
     margin: auto;
     background-color: var(--light-brown);
@@ -51,7 +51,7 @@ form input:hover {
 }
 
 :focus {
-    color: var(--blush);
+    color: var(--yellow);
     border-bottom: 3px solid var(--yellow);
 }
 
@@ -71,9 +71,10 @@ form input:hover {
     color: var(--yellow);
 }
 
-form img {
-    
-    width: 360px;
-    height: 360px;
+form img {  
+    width: 400px;
+    height: 400px;
     /* position: absolute; */
+    transition: all .1s ease-in-out;
+
 }
