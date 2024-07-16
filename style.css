@@ -1,7 +1,7 @@
 :root {
     --light-brown: #fdd746;
     --dark-brown: #8b4f1d;
-    --blush:#f89f3f;
+    --blush: #f89f3f;
     --yellow: #d4aa32
 }
 
@@ -16,16 +16,17 @@ body {
     display: flex;
     flex-direction: column;
     padding-top: 60px;
+    flex-wrap: wrap;
 }
 
 .container form {
     position: relative;
     display: flex;
     flex-direction: column;
-    padding: 70px 30px 50px 30px;
+    padding: 70px 30px 90px 30px;
     width: 350px;
     margin: auto;
-    background-color:var(--blush);
+    background-color: var(--blush);
     border-radius: 20px;
     color: var(--dark-brown);
     font-size: 17px;
@@ -57,7 +58,7 @@ form input:hover {
 }
 
 :focus {
-    color:black;
+    color: black;
     border-bottom: 3px solid black;
 }
 
@@ -78,8 +79,8 @@ form input:hover {
 }
 
 .giraffe-img {
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     /* position: absolute; */
     transition: all .1s ease-in-out;
 
@@ -93,22 +94,55 @@ form input:hover {
     content: "";
     z-index: 9999;
     width: 35px;
-    height: 50px;
+    height: 65px;
     /* background-color: #553828; */
-    background: -webkit-linear-gradient(bottom, var(--light-brown) 60%, var(--dark-brown) 50%);
-    border-radius: 100px 100px 0 0;
-    transform: rotate(180deg);
+    background: -webkit-linear-gradient(top, var(--light-brown) 60%, var(--dark-brown) 50%);
+    border-radius: 0 0 100px 100px ;
+    /* transform: rotate(180deg); */
+    /* transform-origin: 0 -80%; */
+    border-bottom-left-radius:40px ;
+    border-bottom-right-radius:40px ;
+    top: 0;
 }
 
 .paw-l:before,
 .paw-l:after {
-    transform-origin: 0 -20%;
-    left: 62px;
+    left: 35px;
+    animation: leftHandsMove 1s ;
 }
 
 .paw-r:before,
 .paw-r:after {
-    transform-origin: 0 -20%;
-    left: 320px;
+    
+    right: 35px;
 
+}
+
+
+.hoof-left,
+.hoof-right {
+    width: 46px;
+    height: 40px;
+    background-color: var(--dark-brown);
+    border-radius: 50% 50% 20% 20%;
+    position: absolute;
+
+}
+
+.hoof-left {
+    bottom: 0;
+    left: 25%;
+}
+
+.hoof-right {
+    bottom: 0;
+    right: 25%;
+}
+
+/* animations */
+@keyframes leftHandsMove{
+    
+    100%{
+        /* transform: rotate(-90deg); */
+    }
 }
