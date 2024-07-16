@@ -1,7 +1,7 @@
 :root {
-    --light-brown: #bd7637;
+    --light-brown: #bf783a;
     --dark-brown: #3f231a;
-    --blush: rgba(0, 0, 0, 0.781);
+    --blush:#d9a835;
     --yellow: #d4aa32
 }
 
@@ -12,20 +12,25 @@ body {
 
 }
 
-.container form {
-    /* position: relative; */
+.container {
     display: flex;
     flex-direction: column;
-    padding: 10px 50px 30px 50px;
-    width: 400px;
+}
+
+.container form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 70px 30px 50px 30px;
+    width: 350px;
     margin: auto;
-    background-color: var(--light-brown);
+    background-color:var(--blush);
     border-radius: 20px;
     color: var(--dark-brown);
     font-size: 17px;
     font-weight: 800;
     font-family: monospace;
-    margin-top: 50px;
+    transform: translateY(-50px);
 }
 
 form input {
@@ -33,31 +38,31 @@ form input {
     border: none;
     border-bottom: 3px solid var(--dark-brown);
     background-color: transparent;
-    color: var(--blush);
+    /* color: var(--blush); */
     transition: all .2s ease-in-out;
 
 }
 
 form input:hover {
-    border-bottom: 3px solid var(--yellow);
+    border-bottom: 3px solid wheat;
 
 }
 
 
 ::placeholder {
-    color: #cebfb5bf;
+    color: #8a6953;
     font-size: 13.5px;
     /* transition: all .2s ease-in-out; */
 }
 
 :focus {
-    color: var(--yellow);
-    border-bottom: 3px solid var(--yellow);
+    color:wheat;
+    border-bottom: 3px solid wheat;
 }
 
 .form-btn {
     background-color: var(--dark-brown);
-    color: var(--light-brown);
+    color: var(--blush);
     border-radius: 20px;
     border: none;
     font-weight: bold;
@@ -67,14 +72,42 @@ form input:hover {
 }
 
 .form-btn:hover {
-    background-color: var(--blush);
-    color: var(--yellow);
+    background-color: var(--light-brown);
+    color: var(--dark-brown);
 }
 
-form img {  
-    width: 400px;
-    height: 400px;
+.giraffe-img {
+    width: 350px;
+    height: 350px;
     /* position: absolute; */
     transition: all .1s ease-in-out;
+
+}
+
+.paw-l:before,
+.paw-l:after,
+.paw-r:before,
+.paw-r:after {
+    position: absolute;
+    content: "";
+    z-index: 9999;
+    width: 35px;
+    height: 50px;
+    /* background-color: #553828; */
+    background: -webkit-linear-gradient(bottom, var(--light-brown) 60%, var(--dark-brown) 50%);
+    border-radius: 100px 100px 0 0;
+    transform: rotate(180deg);
+}
+
+.paw-l:before,
+.paw-l:after {
+    transform-origin: 0 -20%;
+    left: 62px;
+}
+
+.paw-r:before,
+.paw-r:after {
+    transform-origin: 0 -20%;
+    left: 320px;
 
 }
