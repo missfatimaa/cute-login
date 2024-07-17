@@ -1,6 +1,6 @@
 :root {
     --light-brown: #fdd746;
-    --dark-brown: #8b4f1d;
+    --dark-brown: #7c4619;
     --blush: #f89f3f;
     --yellow: #d4aa32
 }
@@ -23,7 +23,7 @@ body {
     position: relative;
     display: flex;
     flex-direction: column;
-    padding: 70px 30px 90px 30px;
+    padding: 90px 30px 90px 30px;
     width: 350px;
     margin: auto;
     background-color: var(--blush);
@@ -68,7 +68,7 @@ form input:hover {
     border-radius: 20px;
     border: none;
     font-weight: bold;
-    padding: 5px 50px;
+    padding: 8px 50px;
     font-size: 17px;
     transition: all .2s ease-in-out;
 }
@@ -82,39 +82,39 @@ form input:hover {
     width: 200px;
     height: 200px;
     /* position: absolute; */
-    transition: all .1s ease-in-out;
-
+    transition: all .9s ease;
 }
 
-.paw-l:before,
-.paw-l:after,
-.paw-r:before,
-.paw-r:after {
+
+.paw-l,
+.paw-r {
     position: absolute;
-    content: "";
+    /* content: ""; */
     z-index: 9999;
     width: 35px;
     height: 65px;
     /* background-color: #553828; */
     background: -webkit-linear-gradient(top, var(--light-brown) 60%, var(--dark-brown) 50%);
-    border-radius: 0 0 100px 100px ;
+    border-radius: 0 0 100px 100px;
     /* transform: rotate(180deg); */
     /* transform-origin: 0 -80%; */
-    border-bottom-left-radius:40px ;
-    border-bottom-right-radius:40px ;
-    top: 0;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    top: -8px;
 }
 
-.paw-l:before,
-.paw-l:after {
+.paw-l {
     left: 35px;
-    animation: leftHandsMove 1s ;
+    /* animation: leftHandsMove 1.2s ease forwards; */
+    transform-origin: 50% 5%;
 }
 
-.paw-r:before,
-.paw-r:after {
-    
+
+.paw-r {
     right: 35px;
+    /* animation: rightHandsMove 1.2s ease forwards; */
+    transform-origin: 50% 5%;
+
 
 }
 
@@ -126,23 +126,73 @@ form input:hover {
     background-color: var(--dark-brown);
     border-radius: 50% 50% 20% 20%;
     position: absolute;
-
+    bottom: 0;
 }
 
 .hoof-left {
-    bottom: 0;
     left: 25%;
 }
 
 .hoof-right {
-    bottom: 0;
     right: 25%;
 }
 
 /* animations */
-@keyframes leftHandsMove{
-    
-    100%{
-        /* transform: rotate(-90deg); */
+@keyframes leftHandsMove {
+    20% {
+        height: 50px;
+        background: -webkit-linear-gradient(top, var(--light-brown) 70%, var(--dark-brown) 50%);
     }
+
+    100% {
+        transform: rotate(-155deg);
+        background: -webkit-linear-gradient(top, var(--light-brown) 70%, var(--dark-brown) 50%);
+        height: 130px;
+        left: 85px
+    }
+
+}
+
+@keyframes rightHandsMove {
+    20% {
+        background: -webkit-linear-gradient(top, var(--light-brown) 70%, var(--dark-brown) 50%);
+        height: 50px;
+    }
+
+    100% {
+        height: 130px;
+        transform: rotate(155deg);
+        background: -webkit-linear-gradient(top, var(--light-brown) 70%, var(--dark-brown) 50%);
+        right: 85px;
+    }
+
+}
+
+/* animations */
+@keyframes leftHandsBack {
+    90% {
+        background: -webkit-linear-gradient(top, var(--light-brown) 70%, var(--dark-brown) 50%);
+    }
+
+    100% {
+        transform: rotate(-155deg);
+        background: -webkit-linear-gradient(top, var(--light-brown) 70%, var(--dark-brown) 50%);
+        height: 130px;
+        left: 85px
+    }
+
+}
+
+@keyframes rightHandsBack {
+    90% {
+        background: -webkit-linear-gradient(top, var(--light-brown) 70%, var(--dark-brown) 50%);
+    }
+
+    100% {
+        transform: rotate(155deg);
+        background: -webkit-linear-gradient(top, var(--light-brown) 70%, var(--dark-brown) 50%);
+        height: 130px;
+        right: 85px;
+    }
+
 }
